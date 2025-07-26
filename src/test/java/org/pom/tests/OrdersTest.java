@@ -19,6 +19,4 @@ public class OrdersTest extends BaseTest {
         ordersPage.loadOrdersPage();
         assert ordersPage.verifyNoOrdersMessageDisplayed() : "'No orders found' message is not displayed!";
     }
-
-
 }
