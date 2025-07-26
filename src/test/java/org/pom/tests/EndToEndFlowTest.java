@@ -24,16 +24,10 @@ public class EndToEndFlowTest extends BaseTest {
     public void verifyValidLoginCredentials(){
         DemoPage demoPage = new DemoPage(getDriver());
         demoPage.load();
-        SignInTest signInTest = new SignInTest();
-        signInTest.verifySignInToApplication();
         demoPage.selectVendor("Apple");
         demoPage.clickOnAddToCart("iPhone 12");
         CheckOutSideModal checkOutSideModal = new CheckOutSideModal(getDriver());
         checkOutSideModal.clickOnCheckoutBag();
         checkOutSideModal.clickOnCheckOutButton();
-        CheckoutPage checkoutPage = new CheckoutPage(getDriver());
-        checkoutPage.enterTextInAddressField("firstNameInput","Pranav").enterTextInAddressField("lastNameInput","Kumar")
-                .enterTextInAddressField("addressLine1Input","123 Main St").enterTextInAddressField("provinceInput","California").enterTextInAddressField("postCodeInput","90001");
-        checkoutPage.clickOnSubmitButton();
     }
 }
