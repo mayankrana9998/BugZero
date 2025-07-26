@@ -1,5 +1,5 @@
-userName: nitishjoon_YgBGPQ
-accessKey: vijpxRxjCB3PhdyTJJ9s
+userName: name
+accessKey: acceskey
 framework: true
 platforms:
   - os: Windows
@@ -16,4 +16,4 @@ platforms:
     deviceOrientation: portrait
 browserstackLocal: true
 buildName: browserstack-build-1
-projectName: bugZero
+projectName: BugZero
