@@ -88,8 +88,13 @@ public class DemoPage extends BasePage {
         return this;
     }
 
-    public boolean isLogoutOrSignInButtonDisplayed(String buttonId) {
-        String xpath = "//a[@id='" + buttonId + "']";
-        return ValidationCommonUtils.getInstance(driver).isDisplayed(xpath, LocatorEnum.XPATH.value(), buttonId + " button", PAGE_NAME);
+    public DemoPage clickOnAddToFavouritesButton(String productName){
+        PageCommonUtils.getInstance(driver).click("//img[@alt='"+productName+"']/parent::div/preceding-sibling::div//button[contains(@class,'Button clicked')]", LocatorEnum.XPATH.value(), productName + " remove from favourites button", PAGE_NAME);
+        return this;
+    }
+
+    public boolean isLogoutOrSignInButtonDisplayed(String buttonId){
+        WebElement button = PageCommonUtils.getInstance(driver).createWebElementByLocator(LocatorEnum.ID.value(), buttonId);
+        return ValidationCommonUtils.getInstance(driver).isDisplayed(button, "button " + buttonId , PAGE_NAME);
     }
 }
